@@ -4,7 +4,7 @@
   "description": "movie-trailer",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "author": "snocoder",
   "license": "ISC",
@@ -14,7 +14,6 @@
     "express": "^4.17.1",
     "live-server": "^1.2.1",
     "mongojs": "^2.6.0",
-    "nodemon": "^1.19.2",
     "pug": "^2.0.4",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",

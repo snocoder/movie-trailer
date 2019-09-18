@@ -13,17 +13,22 @@ const getOptions = url => {
     }
 }
 
-
+// bnd
 
 const sendTrailer = async (trailerName) => {
-    const searchUrl = `${baseURL}/search/movie?${apiKey}&query=${trailerName}`
-    const searchRes = await request.get(getOptions(searchUrl))
-    const movieId = JSON.parse(searchRes).results[0].id
-    const traileUrl = `${baseURL}/movie/${movieId}/videos?${apiKey}`
-    const vRes = await request.get(getOptions(traileUrl))
-    const youtubeId = JSON.parse(vRes).results[0].key
-    // console.log(youtubeId)
-    return youtubeId
+    try {
+        const searchUrl = `${baseURL}/search/movie?${apiKey}&query=${trailerName}`
+        const searchRes = await request.get(getOptions(searchUrl))
+        console.log('###### ',searchRes)
+        const movieId = JSON.parse(searchRes).results[0].id
+        const traileUrl = `${baseURL}/movie/${movieId}/videos?${apiKey}`
+        const vRes = await request.get(getOptions(traileUrl))
+        const youtubeId = JSON.parse(vRes).results[0].key
+        return youtubeId
+    } catch (error) {
+        return undefined
+    }
+    
 }
 
 module.exports = sendTrailer

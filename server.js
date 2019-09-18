@@ -24,9 +24,13 @@ app.post('/getTrailer', async (req, res) => {
     const trailerName = body.trailer
     if(trailerName){
         sendTrailer(trailerName).then(youTubeId => {
-            console.log(youTubeId)
-            url = `https://www.youtube.com/watch?v=${youTubeId}`
-            res.render('video', {id: youTubeId, url: url})
+            if(youTubeId) {
+                // console.log(youTubeId)
+                url = `https://www.youtube.com/watch?v=${youTubeId}`
+                res.render('video', {id: youTubeId, url: url})
+            } else {
+                res.send('Trailer not found')
+            }
         }) 
     }
     else{
