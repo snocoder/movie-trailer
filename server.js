@@ -43,8 +43,8 @@ app.post('/getTrailer', async (req, res) => {
 
 });
 
-
-app.listen(3000, () => console.log('Listening on port 3000..'))
+var port = 3000 || process.env.PORT;
+app.listen(port, () => console.log('Listening on port 3000..'))
 
 
 // AIzaSyBJUgsn9cYSQcGvSjOTb__VE9fYQtXv1bk
