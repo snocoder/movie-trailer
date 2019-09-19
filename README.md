@@ -9,5 +9,5 @@ Images :
 Landing Page : -
 ![alt text](/images/homepage.png)
 
-Trailer : -
+Trailer for searched movie : -
 ![alt text](/images/trailer.png)
