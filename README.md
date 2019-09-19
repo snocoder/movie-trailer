@@ -1,5 +1,6 @@
 # movie-trailer
  search for movie trailers
+Website: https://movietrailerapp.herokuapp.com/
 
 Steps to run the code.
 1. npm install
