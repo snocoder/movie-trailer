@@ -6,6 +6,7 @@ head
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
   link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet')
   title Movie-Trailer
   style.
     .cont{
@@ -15,6 +16,20 @@ head
       margin-left: 40%;
       margin-top: 40px;
     }
+    .err{
+      color: #ee6e73;
+    }
+    .git{
+      position: absolute;
+      display: inline-block;
+      padding: 15px;
+    }
+
+.git
+  a.git-a(href='https://github.com/snocoder/movie-trailer')
+    span(style='font-size: 30px; color: #000;')
+      i.fa.fa-github
+
 
 h5 Search Movie Trailer
 .cont
@@ -26,6 +41,9 @@ h5 Search Movie Trailer
         .input-field
           input(placeholder='movie name..' type='text' name='trailer')
           label(for='first_name') Search Movie Name
+        if error
+          p.err #{error} *
       .row
         button.btn.waves-effect.waves-light(type='submit')
           | Search
+

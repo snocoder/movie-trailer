@@ -33,12 +33,12 @@ app.post('/getTrailer', async (req, res) => {
                 url = `https://www.youtube.com/watch?v=${youTubeId}`
                 res.render('video', {id: youTubeId, url: url, about: about})
             } else {
-                res.send('Trailer not found')
+                res.render('index', {error: 'Movie Trailer Not Found'})
             }
         }) 
     }
     else{
-        res.send('Invalid TrailerName')
+        res.render('index', {error: 'Please Enter Valid Movie Name'})
     }
 
 });
