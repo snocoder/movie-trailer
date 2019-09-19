@@ -6,5 +6,8 @@ Steps to run the code.
 2. npm run dev
 
 Images :
-
+Landing Page : -
 ![alt text](/images/homepage.png)
+
+Trailer : -
+![alt text](/images/trailer.png)
