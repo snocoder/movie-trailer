@@ -11,8 +11,20 @@ head
     #player {
       margin-top: 20px;
     }
+    .title{
+      text-transform: uppercase;
+      color: #fda77f;
+      font-weight: bold
+    }
+    .hd{
+      color: #fda77f;
+      text-transform: uppercase;
+      font-weight: bold
+    }
 
-//- p= url
+div
+  h5.center-align.title #{about.title}
+//- p= about.title
 .row
   .col.s6.offset-s3
     #player
@@ -20,13 +32,24 @@ head
 .row
   .col.s6.offset-s3
     .card-panel.valign.center
-      h4.blue-text.text-darken-2 Share On Facebook
+      p
+        span.hd Popularity :
+        |  #{about.popularity}
+      p
+        span.hd Adult :
+        |  #{about.adult}
+      p
+        span.hd Overview :
+        |  #{about.overview}
+
+
+      //- hp.blue-text.text-darken-2 Share On Facebook
       #fb-root
       script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/en_US/sdk.js#xfbml=1%26version=v4.0')
       .fb-share-button(data-href='https://www.youtube.com/watch?v=Spx-Mx3xhYY' data-layout='button_count' data-size='small')
         a.fb-xfbml-parse-ignore(target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgVwycnRGuVs&src=sdkpreparse')
           
-          |  Facebook
+          |  <a class="waves-effect waves-light btn">Share on Facebook</a>
 
 script.
   var tag = document.createElement('script');

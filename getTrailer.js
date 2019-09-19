@@ -16,15 +16,26 @@ const getOptions = url => {
 // bnd
 
 const sendTrailer = async (trailerName) => {
+
     try {
         const searchUrl = `${baseURL}/search/movie?${apiKey}&query=${trailerName}`
         const searchRes = await request.get(getOptions(searchUrl))
-        console.log('###### ',searchRes)
+
+        const about = JSON.parse(searchRes).results[0]
+        // console.log('###about### ',about)
+
         const movieId = JSON.parse(searchRes).results[0].id
         const traileUrl = `${baseURL}/movie/${movieId}/videos?${apiKey}`
         const vRes = await request.get(getOptions(traileUrl))
+        // console.log('##vRes##\n', vRes)
         const youtubeId = JSON.parse(vRes).results[0].key
-        return youtubeId
+        // console.log('##yid##\n',youtubeId)
+        const data = {
+            about,
+            youtubeId
+        }
+        return data
+
     } catch (error) {
         return undefined
     }
