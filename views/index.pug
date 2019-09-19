@@ -9,13 +9,17 @@ head
   link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet')
   title Movie-Trailer
   style.
+    .con{
+      position: relative;
+      padding: 13px;
+    }
     .cont{
       margin-top: 25vh;
     }
     h5{
-      margin-left: 40%;
-      margin-top: 40px;
+      margin-top: 5%;
     }
+    
     .err{
       color: #ee6e73;
     }
@@ -23,27 +27,31 @@ head
       position: absolute;
       display: inline-block;
       padding: 15px;
+      margin-bottom: 0;
+      margin-top: 10%;
     }
 
-.git
-  a.git-a(href='https://github.com/snocoder/movie-trailer')
-    span(style='font-size: 30px; color: #000;')
-      i.fa.fa-github
 
 
-h5 Search Movie Trailer
-.cont
-  
-  .row
-    form.col.s6.offset-s3(action='/getTrailer' method='POST')
-      
-      .row
-        .input-field
-          input(placeholder='movie name..' type='text' name='trailer')
-          label(for='first_name') Search Movie Name
-        if error
-          p.err #{error} *
-      .row
-        button.btn.waves-effect.waves-light(type='submit')
-          | Search
+.con
 
+  h5.center-align Search Movie Trailer
+  .cont
+    
+    .row
+      form.col.m6.s12.offset-m3(action='/getTrailer' method='POST')
+        
+        .row
+          .input-field
+            input(placeholder='movie name..' type='text' name='trailer')
+            label(for='first_name') Search Movie Name
+          if error
+            p.err #{error} *
+        .row
+          button.btn.waves-effect.waves-light(type='submit')
+            | Search
+
+  .git
+    a.git-a(href='https://github.com/snocoder/movie-trailer')
+      span(style='font-size: 30px; color: #000;')
+        i.fa.fa-github

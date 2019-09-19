@@ -28,20 +28,17 @@ head
       padding: 15px;
     }
 
-.git
-  a.git-a(href='https://github.com/snocoder/movie-trailer')
-    span(style='font-size: 30px; color: #000;')
-      i.fa.fa-github
+
 
 div
   h5.center-align.title #{about.title}
 //- p= about.title
 .row
-  .col.s6.offset-s3
+  .col.m6.s12.offset-m3
     #player
 
 .row
-  .col.s6.offset-s3
+  .col.m6.s12.offset-m3
     .card-panel.valign.center
       p
         span.hd Popularity :
@@ -62,21 +59,38 @@ div
           
           |  <a class="waves-effect waves-light btn">Share on Facebook</a>
 
+.git
+  a.git-a(href='https://github.com/snocoder/movie-trailer')
+    span(style='font-size: 30px; color: #000;')
+      i.fa.fa-github
+
 script.
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var player;
+  var x = screen.width;
+  var h = '390';
+  var w = '628';
+  if(x<600){
+    //- x = 300;
+    w = (x-18).toString();
+    h = '300';
+  }
+  //- console.log(x)
   function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-  height: '390',
-  width: '640',
+
+  height: h,
+  width: w,
   videoId: "#{id}",
+
   events: {
   'onReady': onPlayerReady,
   'onStateChange': onPlayerStateChange
   }
+
   });
   }
   function onPlayerReady(event) {

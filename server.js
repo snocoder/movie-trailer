@@ -23,12 +23,12 @@ app.post('/getTrailer', async (req, res) => {
     if(trailerName){
         sendTrailer(trailerName).then((data) => {
             if(data) {
-                console.log('data', data)
+                // console.log('data', data)
 
                 const youTubeId = data.youtubeId
                 const about = data.about
 
-                console.log('yid: ', youTubeId) 
+                // console.log('yid: ', youTubeId) 
 
                 url = `https://www.youtube.com/watch?v=${youTubeId}`
                 res.render('video', {id: youTubeId, url: url, about: about})
